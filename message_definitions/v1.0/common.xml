@@ -2167,6 +2167,9 @@
       <entry value="12" name="MAV_DATA_STREAM_EXTRA3">
         <description>Dependent on the autopilot</description>
       </entry>
+      <entry value="13" name="MAV_DATA_STREAM_TORNADO">
+        <description>Tornado</description>
+      </entry>
     </enum>
     <enum name="MAV_ROI">
       <deprecated since="2018-01" replaced_by="MAV_CMD_DO_SET_ROI_*"/>
@@ -5658,6 +5661,20 @@
       <field type="int8_t" name="custom0">Field for custom payload.</field>
       <field type="int8_t" name="custom1">Field for custom payload.</field>
       <field type="int8_t" name="custom2">Field for custom payload.</field>
+    </message>
+    <message id="236" name="TORNADO_SENSORS">
+      <field type="uint32_t" name="time_msec">Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.</field>
+      <field type="uint16_t" name="humidity">Humidity</field>
+      <field type="uint16_t" name="temp_sht30">SHT30 Temp</field>
+      <field type="uint32_t" name="static_pressure">Static Pressure</field>
+      <field type="uint16_t" name="temp_lps">LPS Temp</field>
+      <field type="uint16_t" name="temp_ds18b20">DS18B20 Temp</field>
+      <field type="uint32_t" name="diff_pressure_forward">Diff Pressure Forward</field>
+      <field type="uint16_t" name="temp_forward_ms4425">MS4425 Forward Temp</field>
+      <field type="uint32_t" name="diff_pressure_up">Diff Pressure Up</field>
+      <field type="uint16_t" name="temp_up_ms4425">MS4425 Up Temp</field>
+      <field type="uint32_t" name="diff_pressure_side">Diff Pressure Side</field>
+      <field type="uint16_t" name="temp_side_ms4425">MS4425 Side Temp</field>
     </message>
     <message id="241" name="VIBRATION">
       <description>Vibration levels and accelerometer clipping</description>
